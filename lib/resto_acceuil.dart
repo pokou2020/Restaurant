@@ -30,6 +30,7 @@ class _RestoAcceuilState extends State<RestoAcceuil> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: true,
+        selectedItemColor:const Color.fromARGB(255, 255, 81, 0),
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: (value) {
