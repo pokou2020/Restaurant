@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
-class RestoAcceuil extends StatefulWidget {
-  const RestoAcceuil({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<RestoAcceuil> createState() => _RestoAcceuilState();
+  State<Home> createState() => _HomeState();
 }
 
-class _RestoAcceuilState extends State<RestoAcceuil> {
-  final _textcontrollerrecherche = TextEditingController();
-
+class _HomeState extends State<Home> {
+    final _textcontrollerrecherche = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return  Padding(
         padding: const EdgeInsets.only(left: 8, right: 8, top: 30),
         child: Column(
           children: [
@@ -162,7 +160,7 @@ class _RestoAcceuilState extends State<RestoAcceuil> {
                 )),
                 SizedBox(
                 
-                  height: MediaQuery.of(context).size.height/1.7,
+                  height: MediaQuery.of(context).size.height/2,
                   child: GridView.builder(
                      itemCount: 5,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -185,7 +183,7 @@ class _RestoAcceuilState extends State<RestoAcceuil> {
                             height: 100,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(image: AssetImage("assets/images/graines.jpg"), fit: BoxFit.cover)
+                              image: const DecorationImage(image: AssetImage("assets/images/graines.jpg"), fit: BoxFit.cover)
                             ),
                            ),
 
@@ -256,7 +254,6 @@ class _RestoAcceuilState extends State<RestoAcceuil> {
               //   )
           ],
         ),
-      ),
-    );
+      );
   }
 }
