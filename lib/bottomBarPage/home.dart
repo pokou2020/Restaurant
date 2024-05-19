@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../DetailRepas.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -12,10 +14,19 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8, top: 30),
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 35),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Row(
+            Expanded(
+              flex: 2,
+              child: Container(
+              
+               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+      Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(Icons.menu),
@@ -30,13 +41,16 @@ class _HomeState extends State<Home> {
                       color: Colors.orange,
                     )
                   ],
-                )
+                ),
+           
+          
+          
               ],
             ),
-            const SizedBox(
-              height: 20,
+                  const SizedBox(
+              height: 15,
             ),
-            const Row(
+                 Row(
               children: [
                 Text(
                   "Bienvenu",
@@ -44,7 +58,10 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            const Row(
+               const SizedBox(
+              height: 15,
+            ),
+                 Row(
               children: [
                 Text(
                   "Monde des recettes",
@@ -52,10 +69,10 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 20,
+                  const SizedBox(
+              height: 15,
             ),
-            Row(
+                Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
@@ -63,11 +80,12 @@ class _HomeState extends State<Home> {
                   width: MediaQuery.of(context).size.width / 1.3,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Colors.grey[300]),
+                      color: Color.fromARGB(110, 224, 224, 224)
+                      ),
                   child: TextField(
                     controller: _textcontrollerrecherche,
                     decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: InputBorder.none,
                         hintText: 'Recherche de votre plat favoris',
                         hintStyle: TextStyle(color: Colors.grey),
                         prefixIcon: Icon(
@@ -89,10 +107,19 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            const SizedBox(
+            
+                ],
+               ),
+            )),
+       
+           const SizedBox(
               height: 20,
             ),
-            SizedBox(
+        
+          
+               SizedBox(
+                      
+
                 height: 40,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -158,75 +185,114 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 )),
-                SizedBox(
+           Expanded(
+            flex: 4,
+            
+            child: Container(
+          
+             child: Column(
+               mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                 
+                Container(
+                 
                 
                   height: MediaQuery.of(context).size.height/2,
                   child: GridView.builder(
                      itemCount: 5,
+
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                   crossAxisCount:  2 ), 
+                   crossAxisCount:  2), 
                     itemBuilder: (context, index) {
                   return    Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                        height: MediaQuery.of(context).size.height/1.5,
-                        width: MediaQuery.of(context).size.width/2,
-                        decoration: BoxDecoration(
-                          
-                          borderRadius: BorderRadius.circular(5)
-                        ),
-                        child:  Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                           Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: const DecorationImage(image: AssetImage("assets/images/graines.jpg"), fit: BoxFit.cover)
-                            ),
-                           ),
-
-                          const Text("Riz sauce graine",
-                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15
-                           ),
-                           ),
-                             const Text("Par Nath's",
-                           style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 12
-                           ),
-                           ),
-                         const  Row(
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailRepas()));
+                      },
+                      child: Container(
+                        
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5)
+                          ),
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.crop_din_outlined,  color: Color.fromARGB(255, 255, 81, 0),size: 15,),
-                              
-                               Text("35 min", 
-                                 style: TextStyle(
-                             color: Color.fromARGB(255, 255, 81, 0),
-                            fontSize: 12
-                           ),
-                           
-                               ),
-                               SizedBox(width: 5,),
-                                 Icon(Icons.crop_din_outlined,  color: Color.fromARGB(255, 255, 81, 0),size: 15,),
-                                 
-                               Text("4.5", 
-                                 style: TextStyle(
-                            color: Color.fromARGB(255, 255, 81, 0),
-                            fontSize: 12
-                           ),
-                               ),
-
-                            ],
-                           )
-                        ],),
-                      ),
+                             Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: const DecorationImage(image: AssetImage("assets/images/graines.jpg"), fit: BoxFit.cover)
+                              ),
+                              child: Stack(
+                                children: [
+                                     Positioned(
+                  top: 2,
+                   right: 2,
+                  child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(162, 0, 0, 0),
+                    shape: BoxShape.circle
+                  ),
+                  child: Icon(Icons.favorite_border, color: Colors.white,),
+                )
+                )
+                                ],
+                              ),
+                             ),
+                           const  SizedBox(height: 3,),
+                            const Text("Riz sauce graine",
+                             style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15
+                             ),
+                             ),
+                           const  SizedBox(height: 3,),
+                               const Text("Par Nath's",
+                             style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12
+                             ),
+                             ),
+                              const  SizedBox(height: 3,),
+                            Row(
+                              children: [
+                                Icon(Icons.watch_later_outlined,  color: Colors.orange,size: 15,),
+                                const  SizedBox(width: 5,),
+                                 Text("35 min", 
+                                   style: TextStyle(
+                               color: Colors.orange,
+                              fontSize: 12
+                             ),
+                             
+                                 ),
+                                 SizedBox(width: 5,),
+                                   Icon(Icons.star_border,  color: Colors.orange,size: 15,),
+                                   
+                                 Text("4.5", 
+                                   style: TextStyle(
+                              color: Colors.orange,
+                              fontSize: 12
+                             ),
+                                 ),
+                    
+                              ],
+                             )
+                          ],),
+                        ),
+                    ),
                   );
                   },),
                 )
+              ],
+             ),
+           ))
+          
+       
                 // Container(
                 //     height: MediaQuery.of(context).size.height/3,
                 //     width: MediaQuery.of(context).size.width/2,
