@@ -1,10 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'Projet1/resto_acceuil.dart';
+import 'package:sizer/sizer.dart';
+import 'package:testcode/Projet2/screem/bottomBarSopping/bottonBarPage.dart';
+// import 'package:sizer/sizer.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,14 +16,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
- 
-        primarySwatch: Colors.blue,
-      ),
-      home: const RestoAcceuil(),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+         
+            primarySwatch: Colors.blue,
+          ),
+          // home: const RestoAcceuil(),
+          home: const Bottonbarpage(),
+        );
+      }
     );
   }
 }

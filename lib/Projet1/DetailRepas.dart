@@ -16,10 +16,11 @@ class _DetailRepasState extends State<DetailRepas> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
+     mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-        Expanded(child: Container(
+        Expanded(
+          flex: 4,
+          child: Container(
           width: MediaQuery.of(context).size.width,
          decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -53,11 +54,13 @@ class _DetailRepasState extends State<DetailRepas> {
         )
         ),
 
-          Expanded(child: Container(
+          Expanded(
+            flex: 6,
+            child: Container(
           child: Padding(
             padding: const EdgeInsets.only(left: 10, right: 10, top:10),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 
@@ -85,14 +88,14 @@ class _DetailRepasState extends State<DetailRepas> {
                                  )
                               ],
                             ),
-                            const SizedBox(height: 10,),
+                            const SizedBox(height: 5,),
                                const Text("Par Nath's",
                              style: TextStyle(
                               color: Colors.grey,
                               fontSize: 12
                              ),
                              ),
-                            const  SizedBox(height: 10,),
+                            const  SizedBox(height: 5,),
                             Row(
                               children: [
                                  const Icon(Icons.watch_later_outlined,  color: Color.fromARGB(255, 245, 81, 6),size: 15,),
@@ -124,7 +127,7 @@ class _DetailRepasState extends State<DetailRepas> {
                              ),
 
                              ),
-                              const SizedBox(height: 10,),
+                              const SizedBox(height: 5,),
 
                              Container(
                               height: 18,

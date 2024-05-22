@@ -20,12 +20,11 @@ class _RepasState extends State<Repas> {
 
             Expanded(
               flex: 5,
-              child: Container(
-                
+              child:  Container(
                child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
+                const  Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.menu),
@@ -33,7 +32,7 @@ class _RepasState extends State<Repas> {
               ],
             ),
             
-             SizedBox(height: 5,), 
+            const SizedBox(height: 5,), 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -42,7 +41,7 @@ class _RepasState extends State<Repas> {
                   width: MediaQuery.of(context).size.width / 1.3,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Color.fromARGB(110, 224, 224, 224)),
+                      color:const Color.fromARGB(110, 224, 224, 224)),
                   child: TextField(
                     controller: _textcontrollerrecherche,
                     decoration: const InputDecoration(
@@ -55,7 +54,7 @@ class _RepasState extends State<Repas> {
                         )),
                   ),
                 ),
-                 SizedBox(height: 5,),
+              const   SizedBox(height: 5,),
                 Container(
                   height: 45,
                   width: 60,
@@ -69,8 +68,8 @@ class _RepasState extends State<Repas> {
                 ),
               ],
             ),
-             SizedBox(height: 10,),
-                 Row(
+            const SizedBox(height: 10,),
+                const Row(
               children: [
                Text(
                   "Repas du jours",
@@ -80,14 +79,14 @@ class _RepasState extends State<Repas> {
            
               ],
             ),
-             SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
-               Container(height: MediaQuery.of(context).size.height/4.7,
+               Container(height: MediaQuery.of(context).size.height/5,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(10),
-               image: DecorationImage(image: AssetImage("assets/images/RepasDuJours.jpeg"), fit: BoxFit.cover)
+               image:const  DecorationImage(image: AssetImage("assets/images/RepasDuJours.jpeg"), fit: BoxFit.cover)
             ),
             child: Stack(
                children: [
@@ -100,7 +99,7 @@ class _RepasState extends State<Repas> {
                 Positioned(child:      Container(height: MediaQuery.of(context).size.height/4.7,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
@@ -118,17 +117,17 @@ class _RepasState extends State<Repas> {
                   child: Container(
                   height: 40,
                   width: 40,
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                     color: Color.fromARGB(162, 0, 0, 0),
                     shape: BoxShape.circle
                   ),
-                  child: Icon(Icons.favorite_border, color: Colors.white,),
+                  child: const Icon(Icons.favorite_border, color: Colors.white,),
                 )
                 ),
-               Positioned(
+             const  Positioned(
                   bottom: 50,
                    left: 4,
-                  child:  const Text("Riz sauce graine",
+                  child:   Text("Riz sauce graine",
                            style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -149,7 +148,7 @@ class _RepasState extends State<Repas> {
                            ),
                         
                                  ),
-                     Positioned(
+                    const Positioned(
                   bottom: 10,
                    left: 4,
                   child:  Row(
@@ -183,7 +182,7 @@ class _RepasState extends State<Repas> {
                ),
             )
             ),
- SizedBox(height: 10,),
+  const SizedBox(height: 10,),
         
             Expanded(
               flex: 6,
@@ -265,6 +264,7 @@ class _RepasState extends State<Repas> {
                   child: GridView.builder(
                      itemCount: 5,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisExtent: 210,
                    crossAxisCount:  2 ), 
                     itemBuilder: (context, index) {
                   return    Padding(
@@ -277,11 +277,11 @@ class _RepasState extends State<Repas> {
                           borderRadius: BorderRadius.circular(5)
                         ),
                         child:  Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                            Container(
-                            height: 100,
+                            height: 120,
                             decoration: BoxDecoration(
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(5),
@@ -295,34 +295,34 @@ class _RepasState extends State<Repas> {
                   child: Container(
                   height: 40,
                   width: 40,
-                  decoration: BoxDecoration(
+                  decoration:const BoxDecoration(
                     color: Color.fromARGB(162, 0, 0, 0),
                     shape: BoxShape.circle
                   ),
-                  child: Icon(Icons.favorite_border, color: Colors.white,),
+                  child: const Icon(Icons.favorite_border, color: Colors.white,),
                 )
                 )
                ],
             ),
                            ),
-                     SizedBox(height: 3,),
+                    const SizedBox(height: 3,),
                           const Text("Riz sauce graine",
                            style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15
                            ),
                            ),
-                           SizedBox(height: 3,),
+                          const SizedBox(height: 3,),
                              const Text("Par Nath's",
                            style: TextStyle(
                             color: Colors.grey,
                             fontSize: 12
                            ),
                            ),
-                           SizedBox(height: 3,),
-                          Row(
+                         const  SizedBox(height: 3,),
+                      const    Row(
                             children: [
-                              const Icon(Icons.watch_later_outlined,  color: Colors.orange, size: 15,),
+                              Icon(Icons.watch_later_outlined,  color: Colors.orange, size: 15,),
                               SizedBox(width: 5,),
                                Text("35 min", 
                                  style: TextStyle(
