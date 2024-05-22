@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testcode/bottomBarPage/favoris.dart';
-import 'package:testcode/bottomBarPage/home.dart';
-import 'package:testcode/bottomBarPage/profil.dart';
-import 'package:testcode/bottomBarPage/repas.dart';
+import 'bottomBarPage/favoris.dart';
+import 'bottomBarPage/home.dart';
+import 'bottomBarPage/profil.dart';
+import 'bottomBarPage/repas.dart';
 
 class RestoAcceuil extends StatefulWidget {
   const RestoAcceuil({super.key});

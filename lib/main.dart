@@ -1,10 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:testcode/provider/qrhome.dart';
-import 'package:testcode/resto_acceuil.dart';
+import 'Projet1/resto_acceuil.dart';
 
 
 void main() {

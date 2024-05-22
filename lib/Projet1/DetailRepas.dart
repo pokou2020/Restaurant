@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:testcode/bottomBarPage/home.dart';
-import 'package:testcode/resto_acceuil.dart';
+import 'package:testcode/Projet1/resto_acceuil.dart';
+
 
 class DetailRepas extends StatefulWidget {
   const DetailRepas({super.key});
