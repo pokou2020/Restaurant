@@ -3,6 +3,7 @@ import 'package:testcode/Projet1/bottomBarPage/profil.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/galerie.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/panier.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/shoppingHome.dart';
+import 'package:testcode/Projet2/screem/bottomBarSopping/util/couleur.dart';
 
 class Bottonbarpage extends StatefulWidget {
   const Bottonbarpage({super.key});
@@ -28,7 +29,7 @@ class _BottonbarpageState extends State<Bottonbarpage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: true,
-         selectedItemColor:const Color.fromARGB(255, 0, 225, 255),
+         selectedItemColor:vertClaire,
         type: BottomNavigationBarType.fixed,
        currentIndex:_currentIndex , 
          onTap: (value) {
