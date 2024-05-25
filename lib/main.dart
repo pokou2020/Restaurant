@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'Projet1/resto_acceuil.dart';
-import 'Projet3/screem/bottombar/bottomBarPage.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
  
         primarySwatch: Colors.blue,
       ),
-      // home: const RestoAcceuil(),
-      home: const BottomBarPage()
+      home: const RestoAcceuil(),
     );
   }
 }
