@@ -24,7 +24,7 @@ class _RepasState extends State<Repas> {
                child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                const  Row(
+                 Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.menu),
@@ -69,7 +69,7 @@ class _RepasState extends State<Repas> {
               ],
             ),
             const SizedBox(height: 10,),
-                const Row(
+                 Row(
               children: [
                Text(
                   "Repas du jours",
@@ -148,7 +148,7 @@ class _RepasState extends State<Repas> {
                            ),
                         
                                  ),
-                    const Positioned(
+                     Positioned(
                   bottom: 10,
                    left: 4,
                   child:  Row(
@@ -320,7 +320,7 @@ class _RepasState extends State<Repas> {
                            ),
                            ),
                          const  SizedBox(height: 3,),
-                      const    Row(
+                        Row(
                             children: [
                               Icon(Icons.watch_later_outlined,  color: Colors.orange, size: 15,),
                               SizedBox(width: 5,),

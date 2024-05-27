@@ -8,14 +8,14 @@ import 'package:testcode/Projet3/screem/bottombar/searchDivers.dart';
 
 import 'galerieDivers.dart';
 
-class BottomBarPage extends StatefulWidget {
-  const BottomBarPage({super.key});
+class BottomBarPageDivers extends StatefulWidget {
+  const BottomBarPageDivers({super.key});
 
   @override
-  State<BottomBarPage> createState() => _BottomBarPageState();
+  State<BottomBarPageDivers> createState() => _BottomBarPageDiversState();
 }
 
-class _BottomBarPageState extends State<BottomBarPage> {
+class _BottomBarPageDiversState extends State<BottomBarPageDivers> {
 
   int currentIndex = 0;
 

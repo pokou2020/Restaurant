@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:sizer/sizer.dart';
 
 import 'util/couleur.dart';
@@ -88,13 +86,11 @@ class _ShoppingHomeState extends State<ShoppingHome> {
               Container(
                  height: 15.h,
                  
-                child: Expanded(
-                        flex: 3,
-                        child: Padding(
-                            padding: const EdgeInsets.only(left: 5 , right: 5),
-                            child: Container(
+                child: Padding(
+                    padding: const EdgeInsets.only(left: 5 , right: 5),
+                    child: Container(
                 
-                            child: ListView.builder(
+                    child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 6,
                 itemBuilder: (context, BuildContext){
@@ -103,53 +99,51 @@ class _ShoppingHomeState extends State<ShoppingHome> {
                   child: Container(
                     
                     
-                               
+                       
                     child: Column(
                   
                    
-                        children: [
-                          Container(     
+                children: [
+                  Container(     
                        height: 9.h,
                        width: 15.w,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage('assets/images/profil5.jpg'), fit: BoxFit.cover),
-                             
-                              shape: BoxShape.circle
-                            ),
-                          ),
-                          Container(
-                            
-                            child: Text("Free", 
-                            style: TextStyle(
-                              fontSize: 10
-                            ),
-                            ),
-                          ),
-                          Container(
-                           
-                            child: Text("Delivrery",
-                              style: TextStyle(
-                              fontSize: 10
-                            ),
-                            ),
-                          )
-                        ],
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('assets/images/profil5.jpg'), fit: BoxFit.cover),
+                     
+                      shape: BoxShape.circle
+                    ),
+                  ),
+                  Container(
+                    
+                    child: Text("Free", 
+                    style: TextStyle(
+                      fontSize: 10
+                    ),
+                    ),
+                  ),
+                  Container(
+                   
+                    child: Text("Delivrery",
+                      style: TextStyle(
+                      fontSize: 10
+                    ),
+                    ),
+                  )
+                ],
                     ),
                   ),
                 );
-                            })
+                    })
                       ),
-                        )),
+                ),
               ),
-             Expanded(
-                      flex: 6,
-                      child: Padding(
-                       padding: const EdgeInsets.only(left: 10 , right: 10),
-                      child: Container(
+             Padding(
+              padding: const EdgeInsets.only(left: 10 , right: 10),
+             child: Container(
                     
                    child: Column(
-                      
-                       children: [
+             
+              children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -180,38 +174,38 @@ class _ShoppingHomeState extends State<ShoppingHome> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Row(
-                        children: [
-                          Container(
-                            height: 12.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                                 image: DecorationImage(image: AssetImage('assets/images/mode2.jpg'), fit: BoxFit.cover),
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.red
-                            ),
-                          )
-                        ],
-                       ),
-                        SizedBox(height: 1.h,),
-                           Text("Tshirts",
-                      style: TextStyle(
-                        fontSize: 12,
-                        
-                      ),
-                      ),
-                        Text("1200 fr homme",
-                      style: TextStyle(
-                        fontSize: 10,
-                        
-                      ),
-                      ),
-                        Text("Disponible",
-                      style: TextStyle(
-                        fontSize: 10,
-                        
-                      ),
-                      ),
+              Row(
+               children: [
+                 Container(
+                   height: 12.h,
+                   width: 30.w,
+                   decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('assets/images/mode2.jpg'), fit: BoxFit.cover),
+                     borderRadius: BorderRadius.circular(5),
+                     color: Colors.red
+                   ),
+                 )
+               ],
+              ),
+               SizedBox(height: 1.h,),
+                  Text("Tshirts",
+             style: TextStyle(
+               fontSize: 12,
+               
+             ),
+             ),
+               Text("1200 fr homme",
+             style: TextStyle(
+               fontSize: 10,
+               
+             ),
+             ),
+               Text("Disponible",
+             style: TextStyle(
+               fontSize: 10,
+               
+             ),
+             ),
                      ],
                    ),
                 );
@@ -250,48 +244,48 @@ class _ShoppingHomeState extends State<ShoppingHome> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Row(
-                        children: [
-                          Container(
-                            height: 12.h,
-                            width: 30.w,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(image: AssetImage('assets/images/veste.jpg'), fit: BoxFit.cover),
-                              color: Colors.red
-                            ),
-                          )
-                        ],
-                       ),
-                        SizedBox(height: 1.h,),
-                           Text("Tshirts",
-                      style: TextStyle(
-                        fontSize: 12,
-                        
-                      ),
-                      ),
-                        Text("1200 fr homme",
-                      style: TextStyle(
-                        fontSize: 10,
-                        
-                      ),
-                      ),
-                        Text("Disponible",
-                      style: TextStyle(
-                        fontSize: 10,
-                        
-                      ),
-                      ),
+              Row(
+               children: [
+                 Container(
+                   height: 12.h,
+                   width: 30.w,
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(5),
+                       image: DecorationImage(image: AssetImage('assets/images/veste.jpg'), fit: BoxFit.cover),
+                     color: Colors.red
+                   ),
+                 )
+               ],
+              ),
+               SizedBox(height: 1.h,),
+                  Text("Tshirts",
+             style: TextStyle(
+               fontSize: 12,
+               
+             ),
+             ),
+               Text("1200 fr homme",
+             style: TextStyle(
+               fontSize: 10,
+               
+             ),
+             ),
+               Text("Disponible",
+             style: TextStyle(
+               fontSize: 10,
+               
+             ),
+             ),
                      ],
                    ),
                 );
               }),
             )
-                      
-                       ],
+             
+              ],
                    ),
                   ),
-                      ))
+             )
               ],
             ),
           ),
