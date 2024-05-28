@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/bottonBarPage.dart';
+import 'package:testcode/projet4/screem/bottomBar/bottomBarPage.dart';
 // import 'package:sizer/sizer.dart';
 
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // home: const RestoAcceuil(),
-          home: const Bottonbarpage(),
+         // home: const Bottonbarpage(),
+         home: const Bottombarpages(),
         );
       }
     );
