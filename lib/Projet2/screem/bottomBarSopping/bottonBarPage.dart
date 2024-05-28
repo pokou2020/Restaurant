@@ -5,14 +5,14 @@ import 'package:testcode/Projet2/screem/bottomBarSopping/panier.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/shoppingHome.dart';
 import 'package:testcode/Projet2/screem/bottomBarSopping/util/couleur.dart';
 
-class Bottonbarpage extends StatefulWidget {
-  const Bottonbarpage({super.key});
+class BottonbarpageResto extends StatefulWidget {
+  const BottonbarpageResto({super.key});
 
   @override
-  State<Bottonbarpage> createState() => _BottonbarpageState();
+  State<BottonbarpageResto> createState() => _BottonbarpageRestoState();
 }
 
-class _BottonbarpageState extends State<Bottonbarpage> {
+class _BottonbarpageRestoState extends State<BottonbarpageResto> {
   int _currentIndex=0;
 
   List<Widget> body= const[
@@ -39,16 +39,16 @@ class _BottonbarpageState extends State<Bottonbarpage> {
         },
         items: const [
         BottomNavigationBarItem(
-           label: "Home",
+           label: "",
           icon: Icon(Icons.home)),
          BottomNavigationBarItem(
-           label: "Panier",
+           label: "",
           icon: Icon(Icons.shopping_cart_rounded)),
           BottomNavigationBarItem(
-             label: "Galerie",
+             label: "",
             icon: Icon(Icons.pie_chart)),
            BottomNavigationBarItem(
-             label: "Profil",
+             label: "",
             icon: Icon(Icons.person_sharp)),
         
       ]),
