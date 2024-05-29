@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
 import 'package:sizer/sizer.dart';
+import 'package:testcode/projet4/screem/ActivationEtape2.dart';
 
 class ActivateProjet4 extends StatefulWidget {
   const ActivateProjet4({super.key});
@@ -10,28 +11,15 @@ class ActivateProjet4 extends StatefulWidget {
 }
 
 class _ActivateProjet4State extends State<ActivateProjet4> {
-final defaultPinTheme= PinTheme(
-   height: 75,
-  width: 75,
-  textStyle: TextStyle(
-    fontSize: 22,
-    color: Colors.black,
-
-  ),
-  decoration: BoxDecoration(
-    color: Colors.orange[100],
-    borderRadius:   BorderRadius.circular(15),
-    border: Border.all(color: Colors.orange)
-  )
- 
-);
   String enteredPin = '';
-  bool isPinVisible = false;
+  bool isPinVisible = true;
 
   /// this widget will be use for each digit
   Widget numButton(int number) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16),
+      padding: const EdgeInsets.only(
+        top: 16,
+      ),
       child: TextButton(
         onPressed: () {
           setState(() {
@@ -51,193 +39,185 @@ final defaultPinTheme= PinTheme(
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(child: Padding(
-       padding:  EdgeInsets.only(left: 2.h, right: 2.h),
-      child: Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-        children:  [
-        const  Text("Enter code",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold
-          ),
-           ),
-           SizedBox(height: 2.h,),
-          const Text("A 4-digit code was sent to j*******ide@gmail.com.",
-           
-            ),
+    return Scaffold(
+     appBar: AppBar(),
+      body: SafeArea(
         
-          const  Text("Enter the code to continue.",
-          
-            ),
-      SizedBox(height: 2.h,),
-            Text("Send to my phone number instead",
-            style: TextStyle(color:Colors.orange[900],
-            fontSize: 16,
-            decoration: TextDecoration.underline,
-            decorationColor:Colors.orange[900],
-            
-            ),
-            ),
-            SizedBox(height: 7.h,),
-            Center(
-              child: Container(
-                child:Pinput(
-                  length: 4,
-                  defaultPinTheme: defaultPinTheme,
-                  focusedPinTheme: defaultPinTheme.copyWith(
-                    decoration: defaultPinTheme.decoration!.copyWith(
-                      border: Border.all(color: Colors.orange)
-                    )
-                  ),
-                  
-                )
-              ),
-            ),
-           SizedBox(height: 7.h,),
-           Center(child: Text("Didn't receive a code? Resend in")),
-           Center(child: Text("05:00")),
+        child: Padding(
+          padding: EdgeInsets.only( right: 5.w, left: 5.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                  child: Container(
+                
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Enter code",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    const Text(
+                      "A 4-digit code was sent to j*******ide@gmail.com.",
+                    ),
+                    const Text(
+                      "Enter the code to continue.",
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    Text(
+                      "Send to my phone number instead",
+                      style: TextStyle(
+                        color: Colors.orange[900],
+                        fontSize: 16,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.orange[900],
+                      ),
+                    ),
+                  ],
+                ),
+              )),
 
-           SizedBox(height: 3.h,),
+              /// Code pin
 
-          
+              Expanded(
+                flex: 4,
+                  child: Container(
+              
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        4,
+                        (index) {
+                          return Container(
+                            margin: const EdgeInsets.all(6.0),
+                            width: 65,
+                            height: 65,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.orange),
+                                borderRadius: BorderRadius.circular(15),
+                                color: index < enteredPin.length
+                                    ? isPinVisible
+                                        ? Colors.orange[100]
+                                        : Colors.orange[100]
+                                    : Colors.orange[100]),
+                            child: isPinVisible && index < enteredPin.length
+                                ? Center(
+                                    child: Text(
+                                      enteredPin[index],
+                                      style: const TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  )
+                                : null,
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Center(child: Text("Didn't receive a code? Resend in")),
+                    Center(child: Text("05:00")),
+                    SizedBox(
+                      height: 3.h,
+                    ),
+                  ],
+                ),
+              )),
 
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-            Container(
-              height: 50,
-              width: 50,
-              child: Center(child: Text("1",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-             Container(
-                height: 50,
-              width: 50,
-              child: Center(child: Text("2",
-               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-              Container(
-                  height: 50,
-              width: 50,
-                child: Center(child: Text("3",
-                 style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-                ))),
-           ],
-           ),
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-            Container(
-              height: 50,
-              width: 50,
-              child: Center(child: Text("4",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-             Container(
-                height: 50,
-              width: 50,
-              child: Center(child: Text("5",
-               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-              Container(
-                  height: 50,
-              width: 50,
-                child: Center(child: Text("6",
-                 style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-                ))),
-           ],
-           ),
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-            Container(
-              height: 50,
-              width: 50,
-              child: Center(child: Text("7",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-             Container(
-                height: 50,
-              width: 50,
-              child: Center(child: Text("8",
-               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-              Container(
-                  height: 50,
-              width: 50,
-                child: Center(child: Text("9",
-                 style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-                ))),
-           ],
-           ),
-              Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-            Container(
-              height: 50,
-              width: 50,
-              child: Center(child: Icon(Icons.backspace_outlined))),
-              SizedBox(width: 35,),
-             Container(
-                height: 50,
-              width: 100,
-              child: Center(child: Text("0",
-               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
-              ))),
-              Container(
-                  height: 50,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.black
-              ),
-                child: Center(child: Icon(Icons.arrow_forward, color:Colors.white, size: 20,))),
-           ],
-           ),
-           
+              Expanded(
+                flex: 6,
+                  child: Container(
+                child: Column(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    
+                    for (var i = 0; i < 3; i++)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(
+                            3,
+                            (index) => numButton(1 + 3 * i + index),
+                          ).toList(),
+                        ),
+                      ),
 
-
-           
-
-           
-        ],
+                      /// 0 digit with back remove
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        
+                          InkWell(
+                            onTap: () {
+                              setState(
+                                () {
+                                  if (enteredPin.isNotEmpty) {
+                                    enteredPin = enteredPin.substring(
+                                        0, enteredPin.length - 1);
+                                  }
+                                },
+                              );
+                            },
+                            child: Container(
+                               width: 80,
+                              child: const Icon(
+                                Icons.backspace_outlined,
+                                color: Colors.black,
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                       
+                          numButton(0),
+                         
+                          InkWell(
+                            onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ActivationEtape2()));
+                            },
+                            child: Container(
+                               height: 50,
+                               width: 80,
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: const Icon(
+                                Icons.arrow_forward,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ))
+            ],
+          ),
+        ),
       ),
-          )),
     );
   }
 }

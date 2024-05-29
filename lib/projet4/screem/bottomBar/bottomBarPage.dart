@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:testcode/projet4/screem/bottomBar/CardsProjet4.dart';
 import 'package:testcode/projet4/screem/bottomBar/CercleProjet4.dart';
 import 'package:testcode/projet4/screem/bottomBar/HomeProjet4.dart';
 import 'package:testcode/projet4/screem/bottomBar/MoreProjet4.dart';
-import 'package:testcode/projet4/screem/bottomBar/ProfileProjet4.dart';
+
+import 'CardsProjet4.dart';
+import 'ProfileProjet4.dart';
+
 
 
 class Bottombarpages extends StatefulWidget {
