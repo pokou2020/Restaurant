@@ -4,7 +4,8 @@ import 'package:sizer/sizer.dart';
 import '../ActivateProjet4.dart';
 
 class CardsProjet4 extends StatefulWidget {
-  const CardsProjet4({super.key});
+  final int? cardspage;
+  const CardsProjet4({Key? key, this.cardspage,}) : super(key: key);
 
   @override
   State<CardsProjet4> createState() => _CardsProjet4State();

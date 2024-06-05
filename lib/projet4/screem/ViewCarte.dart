@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:testcode/projet4/screem/bottomBar/bottomBarPage.dart';
 
 class ViewCarte extends StatefulWidget {
   const ViewCarte({super.key});
@@ -22,12 +23,17 @@ class _ViewCarteState extends State<ViewCarte> {
             Center(
               child: Card(
                 elevation: 10,
-                child: Container(
-                  height: 50.h,
-                  width: 70.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.orange[900]
+                child: InkWell(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Bottombarpages()));
+                  },
+                  child: Container(
+                    height: 50.h,
+                    width: 70.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.orange[900]
+                    ),
                   ),
                 ),
               ),
